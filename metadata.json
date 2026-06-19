@@ -1,0 +1,6 @@
+{
+  "name": "Secure P2P File Share",
+  "description": "High-speed serverless file and folder sharing utilizing end-to-end peer-to-peer WebRTC encryption, accessible via direct link or a 6-digit PIN.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

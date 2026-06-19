@@ -1,0 +1,71 @@
+{
+  "entities": {
+    "SharedFile": {
+      "title": "SharedFile",
+      "description": "Secure file share record stored in the cloud",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique 8-character ID for the file"
+        },
+        "fileName": {
+          "type": "string",
+          "description": "Name of the uploaded file"
+        },
+        "mimeType": {
+          "type": "string",
+          "description": "MIME type of the file"
+        },
+        "size": {
+          "type": "number",
+          "description": "Size of the file in bytes"
+        },
+        "uploadedAt": {
+          "type": "string",
+          "description": "ISO timestamp of when the file was uploaded"
+        },
+        "storagePath": {
+          "type": "string",
+          "description": "Internal cloud storage path of the file"
+        },
+        "downloadUrl": {
+          "type": "string",
+          "description": "Public direct download link from storage"
+        },
+        "passwordHash": {
+          "type": "string",
+          "description": "SHA-256 hash or simple string for optional password protection"
+        },
+        "expiration": {
+          "type": "string",
+          "description": "ISO timestamp of expiration, or 'never'"
+        },
+        "downloadCount": {
+          "type": "number",
+          "description": "Total number of times this file has been downloaded"
+        },
+        "analytics": {
+          "type": "array",
+          "description": "Array of map structures recording download interactions"
+        }
+      },
+      "required": [
+        "id",
+        "fileName",
+        "mimeType",
+        "size",
+        "uploadedAt",
+        "storagePath",
+        "downloadUrl",
+        "downloadCount"
+      ]
+    }
+  },
+  "firestore": {
+    "/shared_files/{fileId}": {
+      "schema": "SharedFile",
+      "description": "Individual file hosting and secure access parameters"
+    }
+  }
+}
